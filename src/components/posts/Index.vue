@@ -1,15 +1,24 @@
 <template>
   <div class="posts">
-    <md-list class="custom-list md-triple-line" v-for="post in posts" :key="post.id">
-      <router-link :to="{ name: 'Posts.show', params: {id: post.id } }">
-        <iccs340-post :post='post'></iccs340-post>
-      </router-link>
-    </md-list>
+    <h1>Posts</h1>
+    <el-table :data="posts" style="width: 100%" @row-click="handleClick">
+      <el-table-column width='95'>
+        <template scope='img'>
+          <img id="note" src="../../assets/post.png">
+        </template>
+      </el-table-column>
+      <el-table-column label="Post">
+        <template scope='scope'>
+          <iccs340-post :post='scope.row'></iccs340-post>
+        </template>
+      </el-table-column>
+    </el-table>
   </div>
 </template>
 
 <script>
 import PostsApi from '../../api/posts.js'
+import router from '../../router'
 
 export default {
   name: 'posts',
@@ -35,12 +44,24 @@ export default {
   },
   components: {
     Iccs340Post: require('./Post')
+  },
+  methods: {
+    handleClick (row) {
+      router.push(this.$route.path + '/' + row.id)
+    }
   }
 }
 </script>
 
 <style scoped>
   .posts {
-    padding: 0 10px;
+    /*padding-top: 1%;*/
+    width: 80%;
+    margin: auto;
+  }
+
+  #note {
+    max-width: 50px;
+    max-height: 50px;
   }
 </style>

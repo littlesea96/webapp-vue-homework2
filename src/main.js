@@ -4,11 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store'
+import UsersApi from './api/users.js'
 
-import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
+import Element from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
-Vue.use(VueMaterial)
+Vue.use(Element)
 
 import Axios from 'axios'
 Vue.$http = Axios
@@ -18,6 +19,7 @@ Axios.defaults.headers.common.Accept = 'application/json'
 Axios.defaults.withCredentials = true
 
 Vue.config.productionTip = false
+UsersApi.checkLoggedIn()
 
 /* eslint-disable no-new */
 new Vue({

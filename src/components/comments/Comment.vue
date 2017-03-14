@@ -1,6 +1,8 @@
 <template>
   <div class="comment">
-    <md-list-item>
+    <span>{{ comment.user.email }}</span>
+    <span>{{ comment.content }}</span>
+    <!-- <md-list-item>
       <md-avatar>
         <md-icon>account_circle</md-icon>
       </md-avatar>
@@ -8,7 +10,7 @@
         <span>{{ comment.user.email }}</span>
         <span>{{ comment.content }}</span>
       </div>
-    </md-list-item>
+    </md-list-item> -->
   </div>
 </template>
 

@@ -1,35 +1,18 @@
 <template>
   <div class="new-post">
-    <md-list class="md-double-line">
-      <md-subheader class="md-inset">New Post</md-subheader>
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>folder</md-icon>
-        </md-avatar>
-        <div class="md-list-text-container">
-          <md-input-container>
-            <label>Name</label>
-            <md-input v-model="post.name" placeholder=""></md-input>
-          </md-input-container>
-        </div>
-      </md-list-item>
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>folder</md-icon>
-        </md-avatar>
-        <div class="md-list-text-container">
-          <md-input-container>
-            <label>Content</label>
-            <md-textarea v-model="post.content" placeholder=""></md-textarea>
-          </md-input-container>
-        </div>
-      </md-list-item>
-      <md-list-item>
-        <span style="flex: 1"></span>
-        <md-button class="md-raised md-primary" @click.native="createPost">Save</md-button>
-        <span style="flex: 1"></span>
-      </md-list-item>
-    </md-list>
+    <h2>New Post</h2>
+    <el-form label-width="80px">
+      <el-form-item label="Title">
+        <el-input placeholder="Title" v-model="post.name"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Content">
+        <el-input type="textarea" :rows="4" placeholder="Content.." v-model="post.content"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click.native="createPost">create</el-button>
+      </el-form-item>
+    </el-form>
   </div>
 </template>
 
@@ -59,6 +42,9 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style>
+  .new-post {
+    width: 55%;
+    margin: auto;
+  }
 </style>

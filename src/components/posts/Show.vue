@@ -1,13 +1,31 @@
 <template>
   <div class="post">
-    <md-list class="md-triple-line">
+    <el-card class="box-card">
+      <div class="each-post">
+        <iccs340-post :post='post'></iccs340-post>
+      </div>
+    </el-card>
+
+    <h2 id="comment">Comments</h2>
+    <div v-for="comment in comments" :key="comment.id">
+      <el-card class="box-card">
+        <div class="each-comment">
+          <iccs340-comment :comment='comment'></iccs340-comment>
+        </div>
+      </el-card>
+    </div>
+    <div class="add-comment">
+      <iccs340-new-comment :post='post'></iccs340-new-comment>
+    </div>
+
+    <!-- <md-list class="md-triple-line">
       <iccs340-post :post='post'></iccs340-post>
     </md-list>
 
     <md-list v-for="comment in comments" :key="comment.id">
       <iccs340-comment :comment='comment'></iccs340-comment>
     </md-list>
-    <iccs340-new-comment :post='post'></iccs340-new-comment>
+    <iccs340-new-comment :post='post'></iccs340-new-comment> -->
   </div>
 </template>
 
@@ -52,5 +70,24 @@ export default {
 </script>
 
 <style scoped>
+  .each-post {
+    margin: auto;
+    width: 75%;
+  }
 
+  .el-card {
+    width: 75%;
+    margin-top: 3% !important;
+    margin: auto;
+    height:
+  }
+
+  #comment {
+    margin-left: 12%;
+  }
+
+  .add-comment {
+    margin-top: 3% !important;
+    margin: auto;
+  }
 </style>

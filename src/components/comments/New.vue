@@ -1,23 +1,13 @@
 <template>
   <div class="new-post">
-    <md-list>
-      <md-list-item>
-        <md-avatar class="md-avatar-icon">
-          <md-icon>folder</md-icon>
-        </md-avatar>
-        <div class="md-list-text-container">
-          <md-input-container>
-            <label>Add Comment</label>
-            <md-input v-model="comment.content" placeholder=""></md-input>
-          </md-input-container>
-        </div>
-      </md-list-item>
-      <md-list-item>
-        <span style="flex: 1"></span>
-        <md-button class="md-raised md-primary" @click.native="createComment">Save</md-button>
-        <span style="flex: 1"></span>
-      </md-list-item>
-    </md-list>
+    <el-form>
+
+      <el-form-item>
+        <el-input type="textarea"  :rows="2" placeholder="comment.." v-model="comment.content"></el-input>
+        <el-button id="comment-button" type="primary" @click.native="createComment">add</el-button>
+      </el-form-item>
+
+    </el-form>
   </div>
 </template>
 
@@ -58,7 +48,11 @@ export default {
 </script>
 
 <style scoped>
-.md-list-item {
-  padding-left: 40px;
-}
+  .el-textarea {
+    width: 80% !important;
+    margin-right: 15px;
+  }
+  #comment-button {
+    margin-bottom: 10px;
+  }
 </style>

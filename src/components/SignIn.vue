@@ -1,6 +1,21 @@
 <template>
   <div class="sign-in">
-    <md-list class="md-double-line">
+    <h2>SignIn</h2>
+    <el-form label-width="80px">
+      <el-form-item label="Email">
+        <el-input placeholder="Email" v-model="email"></el-input>
+      </el-form-item>
+
+      <el-form-item label="Password">
+        <el-input placeholder="Password" v-model="password" type="password"></el-input>
+      </el-form-item>
+
+      <el-form-item>
+        <el-button type="primary" @click.native="login">Login</el-button>
+      </el-form-item>
+    </el-form>
+
+    <!-- <md-list class="md-double-line">
       <md-subheader class="md-inset">New Post</md-subheader>
       <md-list-item>
         <md-avatar class="md-avatar-icon">
@@ -29,7 +44,7 @@
         <md-button class="md-raised md-primary" @click.native="login">Login</md-button>
         <span style="flex: 1"></span>
       </md-list-item>
-    </md-list>
+    </md-list> -->
   </div>
 </template>
 
@@ -57,5 +72,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+  .sign-in {
+    width: 35%;
+    margin: auto;
+    /*text-align: center;*/
+  }
 </style>
