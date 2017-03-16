@@ -17,15 +17,6 @@
     <div class="add-comment">
       <iccs340-new-comment :post='post'></iccs340-new-comment>
     </div>
-
-    <!-- <md-list class="md-triple-line">
-      <iccs340-post :post='post'></iccs340-post>
-    </md-list>
-
-    <md-list v-for="comment in comments" :key="comment.id">
-      <iccs340-comment :comment='comment'></iccs340-comment>
-    </md-list>
-    <iccs340-new-comment :post='post'></iccs340-new-comment> -->
   </div>
 </template>
 

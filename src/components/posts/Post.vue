@@ -1,9 +1,7 @@
 <template>
   <div class="post">
-
     <span>Title: {{ post.name }}</span>
     <p>Content: {{ post.content }}</p>
-
   </div>
 </template>
 

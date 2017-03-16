@@ -55,7 +55,6 @@ export default {
 
 <style scoped>
   .posts {
-    /*padding-top: 1%;*/
     width: 80%;
     margin: auto;
   }
