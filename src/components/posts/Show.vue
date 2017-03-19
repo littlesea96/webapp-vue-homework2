@@ -2,7 +2,7 @@
   <div class="post">
     <el-card class="box-card">
       <div class="each-post">
-        <iccs340-post :post='post'></iccs340-post>
+        <iccs340-post v-if="post.user":post='post'></iccs340-post>
       </div>
     </el-card>
 

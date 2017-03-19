@@ -34,6 +34,7 @@ export default {
     createPost () {
       PostsApi.createPost(this.post,
         function (_post) {
+          console.log(_post)
           router.push({ name: 'Posts.index' })
         }
       )

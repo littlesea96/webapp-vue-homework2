@@ -1,6 +1,7 @@
 <template>
   <div class="post">
-    <span>Title: {{ post.name }}</span>
+    <p>User: {{ post.user.email }}</p>
+    <p>Title: {{ post.name }}</p>
     <p>Content: {{ post.content }}</p>
   </div>
 </template>

@@ -39,16 +39,6 @@ export default {
   }
 }
 
-// export default {
-//   methods: {
-//     toggleLeftSidenav () {
-//       this.$refs.leftSidenav.toggle()
-//     },
-//     logout () {
-//       UsersApi.logout()
-//     }
-//   }
-// }
 </script>
 
 <style lang="css">
